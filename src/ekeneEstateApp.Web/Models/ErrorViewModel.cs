@@ -1,6 +1,6 @@
 using System;
 
-namespace ekeneEstateApp.Models
+namespace ekeneEstateApp.Web.Models
 {
     public class ErrorViewModel
     {
