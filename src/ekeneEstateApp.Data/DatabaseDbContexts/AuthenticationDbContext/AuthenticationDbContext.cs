@@ -2,7 +2,7 @@ using ekeneEstateApp.Data.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ekeneEstateApp.Data.AuthenticationDbContext
+namespace ekeneEstateApp.Data.DatabaseDbContexts.AuthenticationDbContext
 {
     public class AuthenticationDbContext : IdentityDbContext<ApplicationUser>
     {
