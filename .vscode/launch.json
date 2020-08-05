@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/ekeneEstateApp/bin/Debug/netcoreapp3.1/ekeneEstateApp.dll",
+            "program": "${workspaceFolder}/src/ekeneEstateApp.Web/bin/Debug/netcoreapp3.1/ekeneEstateApp.Web.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/ekeneEstateApp",
+            "cwd": "${workspaceFolder}/src/ekeneEstateApp.Web",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

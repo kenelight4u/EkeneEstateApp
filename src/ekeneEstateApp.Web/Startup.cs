@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using ekeneEstateApp.Data.DatabaseDbContexts.ApplicationDbContext;
 using ekeneEstateApp.Data.DatabaseDbContexts.AuthenticationDbContext;
 using ekeneEstateApp.Data.Entities;
+using ekeneEstateApp.Web.Interfaces;
+using ekeneEstateApp.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -58,6 +60,7 @@ namespace ekeneEstateApp.Web
             });
                 
             services.AddControllersWithViews();
+            services.AddTransient<IAccountsService, AccountsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
