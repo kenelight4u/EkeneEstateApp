@@ -23,6 +23,13 @@ namespace ekeneEstateApp.Web.Controllers
             _signInManager = signInManager;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return LocalRedirect("~/");
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
