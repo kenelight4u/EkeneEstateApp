@@ -1,4 +1,6 @@
 using System;
+using System.Threading.Tasks;
+using ekeneEstateApp.Web.Interfaces;
 using ekeneEstateApp.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +8,13 @@ namespace ekeneEstateApp.Web.Controllers
 {
     public class PropertiesController : Controller
     {   
+        private readonly IPropertyService _propertyService;
+
+        public PropertiesController( IPropertyService propertyService )
+        {
+            _propertyService = propertyService;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -18,9 +27,18 @@ namespace ekeneEstateApp.Web.Controllers
             return View();
         }
 
-        public IActionResult Add(PropertyModel model)
+        public async Task<IActionResult> Add(PropertyModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _propertyService.AddProperty(model);
+                return RedirectToAction(nameof(Index));
+            }
+            catch(Exception e)
+            {
+               ModelState.AddModelError("", e.Message);
+                return View();
+            }
         }
     }
 }
