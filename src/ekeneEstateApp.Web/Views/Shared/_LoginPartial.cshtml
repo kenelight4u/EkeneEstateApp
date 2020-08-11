@@ -7,7 +7,7 @@
 {
     <div class="button navbar-right">
         <form asp-action="post">
-            <button class="navbar-btn nav-button wow bounceInRight login" asp-controller="Accounts" asp-action="Logout" data-wow-delay="0.4s">Logout</button>
+            <button class="navbar-btn nav-button wow bounceInRight login" asp-controller="Account" asp-action="Logout" data-wow-delay="0.4s">Logout</button>
         </form>
     </div>
 }
@@ -15,10 +15,10 @@ else
 {
     <div class="button navbar-right">
         <form action="get">
-            <button class="navbar-btn nav-button wow bounceInRight login"  data-wow-delay="0.4s" asp-controller="Accounts" asp-action="Login">
+            <button class="navbar-btn nav-button wow bounceInRight login"  data-wow-delay="0.4s" asp-controller="Account" asp-action="Login">
                 Login
             </button>
-            <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.5s" asp-controller="Accounts" asp-action="Register">
+            <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.5s" asp-controller="Account" asp-action="Register">
                 Register
             </button>
         </form>

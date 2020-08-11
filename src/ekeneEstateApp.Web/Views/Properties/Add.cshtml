@@ -21,7 +21,7 @@
             <div class="wizard-container"> 
 
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-                    <form action="Add" method="POST">                        
+                    <form action="Add" method="POST">  
                         <div class="wizard-header">
                             <h3>
                                 <b>Submit</b> YOUR PROPERTY <br>
@@ -37,6 +37,7 @@
                         </ul>
 
                         <div class="tab-content">
+                            <div asp-validation-summary="All" class="text-danger"></div>   
 
                             <div class="tab-pane" id="step1">
                                 <div class="row p-b-15  ">
@@ -253,7 +254,7 @@
                                         <div class="form-group">
                                             <label>Address :</label>
                                             <textarea asp-for="Address" class="form-control" required></textarea>
-                                             <span asp-validation-for="Address" class="text-danger"></span>
+                                            <span asp-validation-for="Address" class="text-danger"></span>
                                         </div> 
                                     </div>
                                     <div class="col-sm-6"> 
@@ -291,11 +292,9 @@
 
                                             <div class="checkbox">
                                                 <label>
-                                                    @* remember to validate it *@
-                                                    <input type="checkbox" required/> <strong>Accept termes and conditions.</strong>
-                                                    @* <span asp-validation-for="checkbox" class="text-danger"></span> *@
+                                                    <input type="checkbox" asp-for="CheckBox" required/> <strong>Accept our terms and conditions.</strong>
                                                 </label>
-                                                
+                                                <span asp-validation-for="CheckBox" class="text-danger"></span>
                                             </div> 
 
                                         </div> 

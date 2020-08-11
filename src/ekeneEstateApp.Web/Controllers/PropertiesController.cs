@@ -2,10 +2,12 @@ using System;
 using System.Threading.Tasks;
 using ekeneEstateApp.Web.Interfaces;
 using ekeneEstateApp.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ekeneEstateApp.Web.Controllers
 {
+    [Authorize]
     public class PropertiesController : Controller
     {   
         private readonly IPropertyService _propertyService;
@@ -15,10 +17,12 @@ namespace ekeneEstateApp.Web.Controllers
             _propertyService = propertyService;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var properties = _propertyService.GetAllProperties();
+            return View(properties);
         }
 
         [HttpGet]
@@ -27,6 +31,7 @@ namespace ekeneEstateApp.Web.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Add(PropertyModel model)
         {
             try

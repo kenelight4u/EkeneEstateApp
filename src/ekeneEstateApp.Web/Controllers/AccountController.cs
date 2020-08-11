@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ekeneEstateApp.Web.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountController : Controller
     {
 
         private readonly IAccountsService _accountsService;
 
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountsController(
+        public AccountController(
             IAccountsService accountsService,
             SignInManager<ApplicationUser> signInManager)
         {
